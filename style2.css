@@ -15,8 +15,8 @@ header {
     color: rgb(159, 18, 18);
     padding: 40px;
     text-align: center;
-    opacity: 0; /* Inicialmente invisible */
-    animation: fadeInUp 1s ease-out forwards; /* Animación de entrada */
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
 }
 
 header h1 {
@@ -26,9 +26,9 @@ header h1 {
 
 nav {
     margin-top: 20px;
-    opacity: 0; /* Inicialmente invisible */
+    opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 0.3s; /* Retraso para que aparezca después del título */
+    animation-delay: 0.3s;
 }
 
 nav ul {
@@ -61,6 +61,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    width: 100%;
 }
 
 .card-deck {
@@ -68,6 +69,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 
 .card {
@@ -82,8 +84,8 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
+    flex-shrink: 0;
 }
-
 
 .card:hover {
     transform: scale(1.05);
@@ -114,11 +116,12 @@ main {
     padding: 20px;
     gap: 10px;
 }
+
 .card-description {
     font-size: 1em;
-    color: rgba(255, 255, 255, 0.8); /* Un color blanco más suave */
-    margin-bottom: 20px; /* Espacio entre la descripción y el botón */
-    line-height: 1.5; /* Mejora la legibilidad */
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .card-title {
@@ -169,22 +172,13 @@ main {
     }
 }
 
-.card-deck:nth-child(1) .card {
-    animation-delay: 0.1s;
-}
+/* Animación por grupo de tarjetas */
+.card-deck:nth-child(1) .card { animation-delay: 0.1s; }
+.card-deck:nth-child(2) .card { animation-delay: 0.3s; }
+.card-deck:nth-child(3) .card { animation-delay: 0.5s; }
+.card-deck:nth-child(4) .card { animation-delay: 0.7s; }
 
-.card-deck:nth-child(2) .card {
-    animation-delay: 0.3s;
-}
-
-.card-deck:nth-child(3) .card {
-    animation-delay: 0.5s;
-}
-
-.card-deck:nth-child(4) .card {
-    animation-delay: 0.7s;
-}
-
+/* 📱 Responsive: Móvil */
 @media (max-width: 768px) {
     .card-deck {
         flex-direction: column;
@@ -193,9 +187,8 @@ main {
 
     .card {
         width: 90%;
-        height: auto; /* Opcional si quieres que se adapte verticalmente */
+        height: auto;
     }
-}
 
     .card-title {
         font-size: 1.5em;
@@ -204,5 +197,8 @@ main {
     .btn-primary {
         padding: 10px 16px;
         font-size: 0.9em;
+    }
+}
+
     }
 }
