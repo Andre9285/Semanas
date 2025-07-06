@@ -15,8 +15,8 @@ header {
     color: rgb(159, 18, 18);
     padding: 40px;
     text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeInUp 1s ease-out forwards; /* Animación de entrada */
 }
 
 header h1 {
@@ -26,9 +26,9 @@ header h1 {
 
 nav {
     margin-top: 20px;
-    opacity: 0;
+    opacity: 0; /* Inicialmente invisible */
     animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 0.3s;
+    animation-delay: 0.3s; /* Retraso para que aparezca después del título */
 }
 
 nav ul {
@@ -61,7 +61,6 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    width: 100%;
 }
 
 .card-deck {
@@ -73,16 +72,15 @@ main {
 
 .card {
     position: relative;
-    flex: 1 1 300px; /* Se adapta automáticamente */
-    max-width: 500px;
+    width: 500px;
     height: 280px;
     background-color: #111;
     border-radius: 20px;
     overflow: hidden;
     border: 2px solid rgb(159, 18, 18);
     transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0; /* Inicia con opacidad 0 para animar */
+    animation: fadeInUp 1s ease-out forwards; /* Aplicamos la animación de entrada */
 }
 
 .card:hover {
@@ -114,12 +112,11 @@ main {
     padding: 20px;
     gap: 10px;
 }
-
 .card-description {
     font-size: 1em;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 20px;
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8); /* Un color blanco más suave */
+    margin-bottom: 20px; /* Espacio entre la descripción y el botón */
+    line-height: 1.5; /* Mejora la legibilidad */
 }
 
 .card-title {
@@ -170,22 +167,26 @@ main {
     }
 }
 
-/* Animación por grupo de tarjetas */
-.card-deck:nth-child(1) .card { animation-delay: 0.1s; }
-.card-deck:nth-child(2) .card { animation-delay: 0.3s; }
-.card-deck:nth-child(3) .card { animation-delay: 0.5s; }
-.card-deck:nth-child(4) .card { animation-delay: 0.7s; }
+.card-deck:nth-child(1) .card {
+    animation-delay: 0.1s;
+}
 
-/* 📱 Responsive: Móvil */
+.card-deck:nth-child(2) .card {
+    animation-delay: 0.3s;
+}
+
+.card-deck:nth-child(3) .card {
+    animation-delay: 0.5s;
+}
+
+.card-deck:nth-child(4) .card {
+    animation-delay: 0.7s;
+}
+
 @media (max-width: 768px) {
-    .card-deck {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .card {
         width: 90%;
-        height: auto;
+        height: 260px;
     }
 
     .card-title {
