@@ -184,9 +184,18 @@ main {
 }
 
 @media (max-width: 768px) {
+    .card-deck {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .card {
         width: 90%;
-        height: 260px;
+        height: auto; /* 👈 Este es el cambio importante */
+    }
+
+    .card-img-overlay {
+        height: 100%;
     }
 
     .card-title {
@@ -198,3 +207,4 @@ main {
         font-size: 0.9em;
     }
 }
+
