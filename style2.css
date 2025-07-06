@@ -69,12 +69,11 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    width: 100%;
 }
 
 .card {
     position: relative;
-    width: 100%;
+    flex: 1 1 300px; /* Se adapta automáticamente */
     max-width: 500px;
     height: 280px;
     background-color: #111;
@@ -84,7 +83,6 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
-    flex-shrink: 0;
 }
 
 .card:hover {
