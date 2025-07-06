@@ -72,16 +72,18 @@ main {
 
 .card {
     position: relative;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 280px;
     background-color: #111;
     border-radius: 20px;
     overflow: hidden;
     border: 2px solid rgb(159, 18, 18);
     transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0; /* Inicia con opacidad 0 para animar */
-    animation: fadeInUp 1s ease-out forwards; /* Aplicamos la animación de entrada */
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
 }
+
 
 .card:hover {
     transform: scale(1.05);
@@ -191,8 +193,9 @@ main {
 
     .card {
         width: 90%;
-        height: 260px;
+        height: auto; /* Opcional si quieres que se adapte verticalmente */
     }
+}
 
     .card-title {
         font-size: 1.5em;
